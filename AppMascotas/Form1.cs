@@ -47,20 +47,21 @@ namespace AppMascotas
                 }
                 rdr.Close();
                 ReportDataSource rds = new ReportDataSource("ReportSQL", lrp);
-                this.reportViewer1.LocalReport.ReportEmbeddedResource = "ReportSQL.Report1.rdlc";
+                this.reportViewer1.LocalReport.ReportEmbeddedResource = "AppMascotas.Report1.rdlc";
                 this.reportViewer1.LocalReport.DataSources.Clear();
                 this.reportViewer1.LocalReport.DataSources.Add(rds);
                 this.reportViewer1.RefreshReport();
-                this.reportViewer1.Width = 745;
-                this.reportViewer1.Height = 450;
+                this.reportViewer1.Width = 750;
+                this.reportViewer1.Height = 500;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
             conn.Close();
+            this.reportViewer1.RefreshReport();
         }
-        private void reportViewer1_Load(object sender, EventArgs e)
+        private void reportViewer1_Load_1(object sender, EventArgs e)
         {
 
         }
